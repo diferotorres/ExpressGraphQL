@@ -15,3 +15,5 @@ if You want tou can install nodemon for executing the App. This package allows t
 <h2>npm install -g nodemon</h2>
 
 After this you can just write the command <h3>nodemon</h3> in the terminal window:
+
+![image](https://user-images.githubusercontent.com/25799227/55893504-fb7fb100-5b7d-11e9-83fb-7b543928e111.png)
