@@ -13,3 +13,5 @@ Then execute <h2> npm install </h2> in order to install packages, in this case a
 if You want tou can install nodemon for executing the App. This package allows to update the execution after saving changes.
 
 <h2>npm install -g nodemon</h2>
+
+After this you can just write the command <h3>nodemon</h3> in the terminal window:
