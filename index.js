@@ -14,6 +14,7 @@ const schema = buildSchema(`
     
     type Mutation{
         updateCourse(id: Int!, topic: String!): Course
+        createCourse(input: CourseInput): Course
     }
     type Course {
        id: Int
@@ -21,6 +22,12 @@ const schema = buildSchema(`
        author: String
        topic: String
        url: String 
+    }
+    input CourseInput{
+       title: String
+       author: String
+       topic: String
+       url: String
     }` 
 );
 
@@ -50,10 +57,16 @@ let updateCourseTopic = ({id, topic}) => {
     });
     return courses.filter(course => course.id === id)[0];
 }
+let createNewCourse = ({input}) =>{
+    input.id = courses.length;
+    courses.push(input);
+    return input;
+}
 const root = {
     course: getCourse,
     courses: getCourses,
-    updateCourse: updateCourseTopic
+    updateCourse: updateCourseTopic,
+    createCourse: createNewCourse
 }
 
 app.use('/graphql', express_graphql({
